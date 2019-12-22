@@ -1,0 +1,94 @@
+﻿<UserControl x:Class="M120_Projekt.Profile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:M120_Projekt"
+      mc:Ignorable="d" 
+      d:DesignHeight="1050" d:DesignWidth="899">
+
+    <Grid Background="#FF979797">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="1" Grid.Row="0" Content="Profile" FontFamily="Arial" FontSize="25" Height="40" VerticalContentAlignment="Center" Margin="0,20,0,0"/>
+        <Border Grid.Column="1" Grid.RowSpan="9" Grid.Row="1" BorderThickness="5" BorderBrush="Black" CornerRadius="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="800" Padding="20" Margin="10,20,10,20">
+
+            <StackPanel Grid.Column="1" Grid.Row="0">
+                <Label Content="Username" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center"></Label>
+                <TextBox Name="Username" Background="#FFC7C7C7" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center"></TextBox>
+                
+                <Label Content="E-Mail" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center"></Label>
+                <TextBox Name="Email" Background="#FFC7C7C7" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center" IsEnabled="False"></TextBox>
+                
+                <DockPanel HorizontalAlignment="Stretch">
+                    <Label DockPanel.Dock="Left" Content="Current Password" FontFamily="Arial" FontSize="20" Height="40" 
+                           HorizontalAlignment="Left" VerticalContentAlignment="Center"></Label>
+                    <CheckBox DockPanel.Dock="Right" Name="ShowPasswordCharsCheckBox" Background="#FFC7C7C7"  
+                              Content="Show Password" Checked="ShowPasswordCharsCheckBox_Checked" 
+                              Unchecked="ShowPasswordCharsCheckBox_Unchecked" Height="40" 
+                              VerticalContentAlignment="Center" FontFamily="Arial" FontSize="20" 
+                              HorizontalContentAlignment="Right" HorizontalAlignment="Right" />
+                    <CheckBox DockPanel.Dock="Right" Name="ChangePasswordCharsCheckBox" Background="#FFC7C7C7"  
+                              Content="Change Password" Checked="ChangePasswordCharsCheckBox_Checked" 
+                              Unchecked="ChangePasswordCharsCheckBox_Unchecked" Height="40" 
+                              VerticalContentAlignment="Center" FontFamily="Arial" FontSize="20" 
+                              HorizontalContentAlignment="Right" HorizontalAlignment="Right" Margin="0,0,20,0" />
+                </DockPanel>
+                <PasswordBox Name="Password" Background="#FFC7C7C7" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center" IsEnabled="False"></PasswordBox>
+                <TextBox Name="PasswordText" Background="#FFC7C7C7" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center" IsEnabled="False" Visibility="Collapsed"></TextBox>
+                
+                <Label Content="New Password" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center"></Label>
+                <PasswordBox Name="NewPassword" Background="#FFC7C7C7" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center" IsEnabled="False"></PasswordBox>
+                <TextBox Name="NewPasswordText" Background="#FFC7C7C7" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center" IsEnabled="False" Visibility="Collapsed"></TextBox>
+                
+                <Label Content="Confirm New Password" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center"></Label>
+                <PasswordBox Name="ConfirmNewPassword" Background="#FFC7C7C7" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center" IsEnabled="False"></PasswordBox>
+                <TextBox Name="ConfirmNewPasswordText" Background="#FFC7C7C7" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center" IsEnabled="False" Visibility="Collapsed"></TextBox>
+                
+                <Label Content="Date Of Birth" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center"></Label>
+                <DatePicker Name="DateOfBirth" Background="#FFC7C7C7" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center"/>
+                
+                <Label Content="Preferred Location" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center"></Label>
+                <ComboBox Name="PreferredLocation" Background="#FFC7C7C7" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center">
+                    <ComboBoxItem IsSelected="True">Select Location</ComboBoxItem>
+                    <ComboBoxItem>Berne</ComboBoxItem>
+                    <ComboBoxItem>Fribourg</ComboBoxItem>
+                    <ComboBoxItem>Zurich</ComboBoxItem>
+                </ComboBox>
+                
+                <Label Content="Preferred Language" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center"></Label>
+                <ComboBox Name="PreferredLanguage" Background="#FFC7C7C7" FontFamily="Arial" FontSize="20" Height="40" VerticalContentAlignment="Center">
+                    <ComboBoxItem IsSelected="True">Select Language</ComboBoxItem>
+                    <ComboBoxItem>German</ComboBoxItem>
+                    <ComboBoxItem>English</ComboBoxItem>
+                    <ComboBoxItem>French</ComboBoxItem>
+                </ComboBox>
+
+                <DockPanel HorizontalAlignment="Center" Margin="0,50,0,0">
+                    <Button Content="Reset" Width="150" Background="#FF686868" FontSize="20" Click="Reset"></Button>
+                    <Button Content="Save" Width="150" Margin="50,0" Background="Green" FontSize="20" Click="Save"></Button>
+                    <Button Content="Delete Account" Width="150" Background="#FFDE3E3E" FontSize="20" Click="DeleteUser"></Button>
+                </DockPanel>
+
+            </StackPanel>
+
+        </Border>
+
+    </Grid>
+</UserControl>
